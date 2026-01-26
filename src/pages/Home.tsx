@@ -26,23 +26,19 @@ const Home: React.FC = () => {
   return (
     <div className="pt-24 lg:pt-32 pb-20 overflow-hidden">
       {/* Hero Section */}
-      {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-4 mb-16 h-auto lg:h-[250px] animate-in fade-in slide-in-from-top-4 duration-700">
-        {/* الصورة الكبيرة اليسرى */}
-        <div className="lg:col-span-8 relative group rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-violet-200 h-[250px] lg:h-full">
+       <section className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-4 mb-16 h-auto lg:h-[250px] animate-in fade-in slide-in-from-top-4 duration-700">
+         <div className="lg:col-span-8 relative group rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-violet-200 h-[250px] lg:h-full">
                  <img src={hero3} alt="Main Promo" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-r from-violet-900/60 to-transparent flex flex-col justify-center p-6 lg:p-10">
             <span className="bg-white text-violet-600 text-[10px] font-black px-3 py-1 rounded-full w-fit mb-2 uppercase tracking-[0.2em] shadow-lg animate-pulse">Limited Time</span>
-            {/* تصغير حجم الخط ليتناسب مع الارتفاع الجديد */}
-            <h1 className="text-2xl lg:text-4xl font-black text-white mb-4 leading-tight drop-shadow-md transform transition-transform group-hover:translate-x-2">SUMMER<br />FINALE 70%</h1>
+             <h1 className="text-2xl lg:text-4xl font-black text-white mb-4 leading-tight drop-shadow-md transform transition-transform group-hover:translate-x-2">SUMMER<br />FINALE 70%</h1>
             <Link to="/shop" className="bg-white text-violet-600 px-6 py-2 rounded-full font-black text-xs w-fit hover:bg-violet-50 transition-all flex items-center shadow-xl hover:-translate-y-1 hover:scale-105 active:scale-95">
               Shop Now <ArrowRight size={14} className="ml-2 group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
         </div>
 
-        {/* الصور الصغيرة اليمنى */}
-        <div className="lg:col-span-4 flex flex-col gap-4 h-[250px] lg:h-full">
+         <div className="lg:col-span-4 flex flex-col gap-4 h-[250px] lg:h-full">
           <div className="flex-1 relative rounded-3xl overflow-hidden group shadow-lg transition-all duration-500 hover:shadow-xl">
                      <img src={hero2} alt="Flash Sale 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors p-4 flex flex-col justify-end">
@@ -58,19 +54,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="max-w-7xl mx-auto px-4 mb-20 overflow-x-auto no-scrollbar animate-in fade-in slide-in-from-left-4 duration-700 delay-200">
-        <div className="flex justify-between items-center gap-8 min-w-[700px] lg:min-w-0">
-          {categories.map((cat, idx) => (
-            <div key={idx} className="flex flex-col items-center group cursor-pointer">
-              <div className={`${cat.color} w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center mb-3 shadow-md group-hover:-translate-y-2 group-hover:scale-110 transition-all`}>
-                <span className="transform group-hover:rotate-12 transition-transform">{cat.icon}</span>
-              </div>
-              <span className="text-[11px] font-black uppercase tracking-wider text-slate-700 group-hover:text-violet-600 transition-colors">{cat.name}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+      
 
       {/* Flash Deals */}
       <section className="bg-violet-50 py-20 mb-20 relative overflow-hidden">
