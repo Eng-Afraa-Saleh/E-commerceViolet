@@ -5,6 +5,10 @@ import { ArrowRight, Zap, TrendingUp, Sparkles, Clock, Crown, Laptop, Gift } fro
 import { useProducts } from '../context/ProductContext';
 import ProductCard from '../components/ProductCard';
 
+import hero1 from '/image/Hero/hero1.jpg';
+import hero2 from '/image/Hero/hero2.jpg';
+import hero3 from '/image/Hero/hero3.png';
+
 const categories = [
   { name: 'Dresses', icon: <Sparkles size={24} />, color: 'bg-pink-100 text-pink-600' },
   { name: 'Deals', icon: <Zap size={24} />, color: 'bg-amber-100 text-amber-600' },
@@ -22,28 +26,33 @@ const Home: React.FC = () => {
   return (
     <div className="pt-24 lg:pt-32 pb-20 overflow-hidden">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-4 mb-16 h-auto lg:h-[500px] animate-in fade-in slide-in-from-top-4 duration-700">
-        <div className="lg:col-span-8 relative group rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-violet-200">
-          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200" alt="Main Promo" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-r from-violet-900/60 to-transparent flex flex-col justify-center p-8 lg:p-16">
-            <span className="bg-white text-violet-600 text-[10px] font-black px-3 py-1 rounded-full w-fit mb-4 uppercase tracking-[0.2em] shadow-lg animate-pulse">Limited Time</span>
-            <h1 className="text-4xl lg:text-6xl font-black text-white mb-6 leading-tight drop-shadow-md transform transition-transform group-hover:translate-x-2">SUMMER<br/>FINALE 70%</h1>
-            <Link to="/shop" className="bg-white text-violet-600 px-8 py-3 rounded-full font-black text-sm w-fit hover:bg-violet-50 transition-all flex items-center shadow-xl hover:-translate-y-1 hover:scale-105 active:scale-95">
-              Shop Now <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-4 mb-16 h-auto lg:h-[250px] animate-in fade-in slide-in-from-top-4 duration-700">
+        {/* الصورة الكبيرة اليسرى */}
+        <div className="lg:col-span-8 relative group rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-violet-200 h-[250px] lg:h-full">
+                 <img src={hero3} alt="Main Promo" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-r from-violet-900/60 to-transparent flex flex-col justify-center p-6 lg:p-10">
+            <span className="bg-white text-violet-600 text-[10px] font-black px-3 py-1 rounded-full w-fit mb-2 uppercase tracking-[0.2em] shadow-lg animate-pulse">Limited Time</span>
+            {/* تصغير حجم الخط ليتناسب مع الارتفاع الجديد */}
+            <h1 className="text-2xl lg:text-4xl font-black text-white mb-4 leading-tight drop-shadow-md transform transition-transform group-hover:translate-x-2">SUMMER<br />FINALE 70%</h1>
+            <Link to="/shop" className="bg-white text-violet-600 px-6 py-2 rounded-full font-black text-xs w-fit hover:bg-violet-50 transition-all flex items-center shadow-xl hover:-translate-y-1 hover:scale-105 active:scale-95">
+              Shop Now <ArrowRight size={14} className="ml-2 group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
         </div>
-        <div className="lg:col-span-4 flex flex-col gap-4">
+
+        {/* الصور الصغيرة اليمنى */}
+        <div className="lg:col-span-4 flex flex-col gap-4 h-[250px] lg:h-full">
           <div className="flex-1 relative rounded-3xl overflow-hidden group shadow-lg transition-all duration-500 hover:shadow-xl">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=600" alt="Flash Sale 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors p-6 flex flex-col justify-end">
-              <h3 className="text-white text-xl font-black uppercase tracking-tighter">Flash Sale</h3>
+                     <img src={hero2} alt="Flash Sale 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors p-4 flex flex-col justify-end">
+              <h3 className="text-white text-lg font-black uppercase tracking-tighter">Flash Sale</h3>
             </div>
           </div>
           <div className="flex-1 relative rounded-3xl overflow-hidden group shadow-lg transition-all duration-500 hover:shadow-xl">
-            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=600" alt="Flash Sale 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors p-6 flex flex-col justify-end">
-              <h3 className="text-white text-xl font-black uppercase tracking-tighter">Bestsellers</h3>
+            <img src={hero1} alt="Flash Sale 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors p-4 flex flex-col justify-end">
+              <h3 className="text-white text-lg font-black uppercase tracking-tighter">Bestsellers</h3>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ import {
   Trash2, 
   Search, 
   X, 
-  ArrowLeft, 
+   
   Image as ImageIcon,
   DollarSign,
   Tag,

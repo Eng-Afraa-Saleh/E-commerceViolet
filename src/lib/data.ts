@@ -1,4 +1,12 @@
 import type { Product } from "../types";
+import item1 from "/image/Items/item1.jpg";
+import item2 from "/image/Items/item2.jpg";
+import item3 from "/image/Items/item3.jpg";
+import item4 from "/image/Items/item4.jpg";
+import item5 from "/image/Items/item5.jpg";
+import item6 from "/image/Items/item6.jpg";
+import item7 from "/image/Items/item7.jpg";
+import item8 from "/image/Items/item8.png";
 
  export const products: Product[] = [
   {
@@ -9,7 +17,7 @@ import type { Product } from "../types";
     discountPercentage: 40,
     description: 'A stunning deep violet floor-length gown with premium velvet finish and elegant slit.',
     category: 'Occasion',
-    image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680fe0a?auto=format&fit=crop&q=80&w=800',
+    image: item1,
     featured: true,
   },
   {
@@ -18,7 +26,7 @@ import type { Product } from "../types";
     price: 45.00,
     description: 'Ultra-soft fleece oversized hoodie in a calming lavender shade. Perfect for cozy street style.',
     category: 'Streetwear',
-    image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=800',
+    image: item2,
     featured: true,
   },
   {
@@ -29,7 +37,7 @@ import type { Product } from "../types";
     discountPercentage: 40,
     description: 'High-performance athletic sneakers with unique violet accents and air-cushion technology.',
     category: 'Shoes',
-    image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800',
+    image: item3,
     featured: true,
   },
   {
@@ -40,7 +48,7 @@ import type { Product } from "../types";
     discountPercentage: 28,
     description: 'Handcrafted sterling silver necklace featuring a raw amethyst crystal point.',
     category: 'Jewelry',
-    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800',
+    image: item4,
     featured: false,
   },
   {
@@ -49,7 +57,7 @@ import type { Product } from "../types";
     price: 75.00,
     description: 'Luxurious silk slip dress that transitions perfectly from day to night.',
     category: 'Dresses',
-    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=800',
+    image: item5,
     featured: false,
   },
   {
@@ -60,7 +68,7 @@ import type { Product } from "../types";
     discountPercentage: 50,
     description: 'Futuristic oversized sunglasses with iridescent purple lenses and UV400 protection.',
     category: 'Accessories',
-    image: 'https://images.unsplash.com/photo-1511499767390-903390e6fbc4?auto=format&fit=crop&q=80&w=800',
+    image: item6,
     featured: true,
   },
   {
@@ -69,7 +77,7 @@ import type { Product } from "../types";
     price: 110.00,
     description: 'Elegant quilted leather handbag with gold chain strap and multiple compartments.',
     category: 'Bags',
-    image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=800',
+    image: item7,
     featured: false,
   },
   {
@@ -80,7 +88,7 @@ import type { Product } from "../types";
     discountPercentage: 43,
     description: 'Water-resistant cropped puffer jacket in high-gloss lilac finish.',
     category: 'Outerwear',
-    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=800',
+    image: item8,
     featured: true,
   },
 ];
