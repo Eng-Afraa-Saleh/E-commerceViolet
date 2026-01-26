@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, TrendingUp, Sparkles, Clock, Crown, Laptop, Gift } from 'lucide-react';
+import { ArrowRight,  TrendingUp,  Clock } from 'lucide-react';
 import { useProducts } from '../context/ProductContext';
 import ProductCard from '../components/ProductCard';
 
@@ -9,14 +9,7 @@ import hero1 from '/image/Hero/hero1.jpg';
 import hero2 from '/image/Hero/hero2.jpg';
 import hero3 from '/image/Hero/hero3.png';
 
-const categories = [
-  { name: 'Dresses', icon: <Sparkles size={24} />, color: 'bg-pink-100 text-pink-600' },
-  { name: 'Deals', icon: <Zap size={24} />, color: 'bg-amber-100 text-amber-600' },
-  { name: 'Shoes', icon: <TrendingUp size={24} />, color: 'bg-violet-100 text-violet-600' },
-  { name: 'Tops', icon: <Crown size={24} />, color: 'bg-blue-100 text-blue-600' },
-  { name: 'Electronics', icon: <Laptop size={24} />, color: 'bg-slate-100 text-slate-600' },
-  { name: 'Gifts', icon: <Gift size={24} />, color: 'bg-red-100 text-red-600' },
-];
+ 
 
 const Home: React.FC = () => {
   const { products } = useProducts();
