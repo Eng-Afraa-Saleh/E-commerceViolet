@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, Star, Heart, X, Eye, Maximize2 } from 'lucide-react';
- import { useCart } from '../context/CartContext';
+import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import type { Product } from '../types';
 
@@ -34,15 +34,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
   const QuickViewModal = () => (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300"
         onClick={toggleModal}
       />
-      
+
       {/* Modal Container */}
-      <div className="relative bg-white w-full max-w-4xl rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row animate-in zoom-in-95 fade-in duration-300">
+      <div className="relative top-8 bg-white w-full max-w-4xl rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row animate-in zoom-in-95 fade-in duration-300">
         {/* Close Button */}
-        <button 
+        <button
           onClick={toggleModal}
           className="absolute top-6 right-6 z-10 p-2 bg-white/80 backdrop-blur-md text-slate-500 hover:text-violet-600 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95"
         >
@@ -51,9 +51,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
 
         {/* Image Section */}
         <div className="md:w-1/2 bg-slate-50 relative aspect-[4/5] md:aspect-auto">
-          <img 
-            src={product.image} 
-            alt={product.name} 
+          <img
+            src={product.image}
+            alt={product.name}
             className="w-full h-full object-cover"
           />
           {product.discountPercentage && (
@@ -64,11 +64,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
         </div>
 
         {/* Info Section */}
-        <div className="md:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
-          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-violet-600 mb-4">{product.category}</p>
+        <div className="  p-8   flex flex-col justify-center">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-violet-600  ">{product.category}</p>
           <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-4 leading-tight">{product.name}</h2>
-          
-          <div className="flex items-center space-x-2 mb-6">
+
+          <div className="flex items-center space-x-2  ">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={14} className={i < 4 ? "fill-amber-400 text-amber-400" : "text-slate-200"} />
@@ -89,13 +89,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
           </p>
 
           <div className="space-y-4">
-            <button 
+            <button
               onClick={handleAddToCart}
               className="w-full bg-violet-600 text-white py-5 rounded-2xl font-black text-sm hover:bg-violet-700 transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center shadow-xl shadow-violet-100 uppercase tracking-widest"
             >
               <ShoppingBag size={18} className="mr-3" /> Add to Shopping Bag
             </button>
-            <Link 
+            <Link
               to={`/product/${product.id}`}
               onClick={toggleModal}
               className="w-full bg-slate-50 text-slate-600 py-4 rounded-2xl font-black text-[10px] hover:bg-slate-100 transition-all flex items-center justify-center uppercase tracking-[0.2em]"
@@ -113,14 +113,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
       <>
         <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 border border-slate-50 flex h-48 sm:h-64 animate-in fade-in slide-in-from-bottom-4">
           {/* Image Section */}
-          <div 
+          <div
             className="relative w-40 sm:w-64 flex-shrink-0 p-4 bg-slate-50 overflow-hidden cursor-pointer"
             onClick={toggleModal}
           >
             <div className="block h-full overflow-hidden rounded-xl relative group/img">
-              <img 
-                src={product.image} 
-                alt={product.name} 
+              <img
+                src={product.image}
+                alt={product.name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-violet-900/10 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
@@ -144,26 +144,25 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
                     <Link to={`/product/${product.id}`}>{product.name}</Link>
                   </h3>
                 </div>
-                <button 
+                <button
                   onClick={(e) => {
                     e.preventDefault();
                     toggleWishlist(product);
                   }}
-                  className={`p-2 rounded-full shadow-sm transition-all transform hover:scale-110 active:scale-90 ${
-                    favorite ? 'bg-violet-600 text-white' : 'bg-white text-slate-300 hover:text-violet-600'
-                  }`}
+                  className={`p-2 rounded-full shadow-sm transition-all transform hover:scale-110 active:scale-90 ${favorite ? 'bg-violet-600 text-white' : 'bg-white text-slate-300 hover:text-violet-600'
+                    }`}
                 >
                   <Heart size={16} className={favorite ? "fill-white" : ""} />
                 </button>
               </div>
-              
+
               <div className="flex items-center space-x-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={12} className={i < 4 ? "fill-amber-400 text-amber-400" : "text-slate-200"} />
                 ))}
                 <span className="text-[10px] text-slate-400 ml-2 group-hover:text-violet-400 transition-colors">(42)</span>
               </div>
-              
+
               <p className="text-sm text-slate-500 line-clamp-2 hidden sm:block opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                 {product.description}
               </p>
@@ -176,7 +175,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
                   <span className="text-sm text-slate-400 line-through">${product.originalPrice.toFixed(2)}</span>
                 )}
               </div>
-              <button 
+              <button
                 onClick={handleAddToCart}
                 className="bg-violet-600 text-white px-6 py-3 rounded-full font-black text-xs hover:bg-violet-700 hover:scale-105 active:scale-95 transition-all flex items-center shadow-lg shadow-violet-100"
               >
@@ -193,14 +192,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
   return (
     <>
       <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-50 flex flex-col animate-in fade-in slide-in-from-bottom-4">
-        <div 
+        <div
           className="relative p-4 bg-slate-50 overflow-hidden cursor-pointer"
           onClick={toggleModal}
         >
           <div className="block aspect-[3/4] overflow-hidden rounded-xl relative group/img">
-            <img 
-              src={product.image} 
-              alt={product.name} 
+            <img
+              src={product.image}
+              alt={product.name}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-violet-900/10 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
@@ -209,27 +208,26 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
               </div>
             </div>
           </div>
-          
+
           {product.discountPercentage && (
             <div className="absolute top-6 left-6 bg-violet-600 text-white text-[10px] font-black px-2 py-1 rounded-md shadow-lg uppercase tracking-wider animate-in zoom-in duration-300">
               -{product.discountPercentage}%
             </div>
           )}
 
-          <button 
+          <button
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               toggleWishlist(product);
             }}
-            className={`absolute top-6 right-6 p-2.5 rounded-full shadow-md transition-all transform hover:scale-110 active:scale-90 opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 ${
-              favorite ? 'bg-violet-600 text-white' : 'bg-white text-slate-300 hover:text-violet-600'
-            }`}
+            className={`absolute top-6 right-6 p-2.5 rounded-full shadow-md transition-all transform hover:scale-110 active:scale-90 opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 ${favorite ? 'bg-violet-600 text-white' : 'bg-white text-slate-300 hover:text-violet-600'
+              }`}
           >
             <Heart size={16} className={favorite ? "fill-white" : ""} />
           </button>
 
-          <button 
+          <button
             onClick={handleAddToCart}
             className="absolute bottom-6 right-6 bg-white text-violet-600 p-3 rounded-full shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:bg-violet-600 hover:text-white transform hover:scale-110 active:scale-90"
           >
@@ -244,12 +242,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
             ))}
             <span className="text-[10px] text-slate-400 ml-1">(42)</span>
           </div>
-          
+
           <h3 className="text-sm font-semibold text-slate-800 line-clamp-1 mb-1 group-hover:text-violet-600 transition-colors">
             <Link to={`/product/${product.id}`}>{product.name}</Link>
           </h3>
           <p className="text-[11px] text-slate-400 uppercase tracking-widest font-medium mb-3 group-hover:text-violet-300 transition-colors">{product.category}</p>
-          
+
           <div className="mt-auto flex items-baseline space-x-2">
             <span className="text-lg font-bold text-slate-900 group-hover:scale-110 transition-transform origin-left">${product.price.toFixed(2)}</span>
             {product.originalPrice && (

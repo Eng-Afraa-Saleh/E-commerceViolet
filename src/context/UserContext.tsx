@@ -1,15 +1,17 @@
 
 import React, { createContext, useContext, useState, type ReactNode } from 'react';
 import type { CartItem, Order, User, UserContextType } from '../types';
+import person1 from '/image/person/person1.jpg';
+import item1 from '/image/Items/item1.jpg';
  
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user] = useState<User>({
-    name: 'Alex Rivera',
-    email: 'alex.rivera@example.com',
+    name: 'Anna Rivera',
+    email: 'anna.rivera@gmail.com',
     memberSince: 'October 2023',
-    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=200',
+    avatar: person1,
   });
 
   const [orders, setOrders] = useState<Order[]>([
@@ -24,7 +26,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           name: 'Velvet Dusk Evening Gown',
           price: 129.99,
           quantity: 1,
-          image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680fe0a?auto=format&fit=crop&q=80&w=800',
+          image: item1,
         }
       ]
     }
