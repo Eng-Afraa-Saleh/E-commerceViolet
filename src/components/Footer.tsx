@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="text-2xl font-bold tracking-tighter text-slate-900">
-              LUMINA<span className="text-indigo-600">.</span>
+              violet<span className="text-indigo-600">.</span>
             </Link>
             <p className="mt-4 text-sm text-slate-500 leading-relaxed">
               Curating high-quality, minimalist essentials for modern living. Designed with purpose, built for longevity.
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
-          <p>© 2024 Lumina Essentials. All rights reserved.</p>
+          <p>© 2024 violet Essentials. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="#" className="hover:text-indigo-600">Privacy Policy</Link>
             <Link to="#" className="hover:text-indigo-600">Terms of Service</Link>

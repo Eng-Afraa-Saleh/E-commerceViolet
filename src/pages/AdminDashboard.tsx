@@ -70,7 +70,7 @@ const AdminDashboard: React.FC = () => {
           <h1 className="text-4xl font-black text-slate-900 uppercase tracking-tighter flex items-center">
             <LayoutDashboard size={32} className="mr-3 text-violet-600" /> Control Panel
           </h1>
-          <p className="text-slate-500 font-medium mt-1">Manage your Lumina store catalog</p>
+          <p className="text-slate-500 font-medium mt-1">Manage your violet store catalog</p>
         </div>
         <div className="flex items-center space-x-4">
           <button 
@@ -189,13 +189,13 @@ const AdminDashboard: React.FC = () => {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-hidden">
           <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300" onClick={() => setShowModal(false)} />
           <div className="relative bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300">
-            <div className="p-8 sm:p-12">
-              <div className="flex justify-between items-center mb-10">
+            <div className="p-6">
+              <div className="flex justify-between items-center  ">
                 <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tighter">Add New Material</h2>
                 <button onClick={() => setShowModal(false)} className="text-slate-300 hover:text-slate-900 transition-colors"><X size={24} /></button>
               </div>
 
-              <form onSubmit={handleAddProduct} className="space-y-6">
+              <form onSubmit={handleAddProduct} className="space-y-2">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="col-span-2">
                     <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 block mb-2 px-1">Product Name</label>
@@ -204,7 +204,7 @@ const AdminDashboard: React.FC = () => {
                       value={newProduct.name}
                       onChange={(e) => setNewProduct({...newProduct, name: e.target.value})}
                       placeholder="e.g. Violet Silk Blouse" 
-                      className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-3 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all" 
+                      className="w-full bg-slate-50 border border-slate-100 rounded-md py-2 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all" 
                     />
                   </div>
                   <div>
@@ -214,7 +214,7 @@ const AdminDashboard: React.FC = () => {
                       value={newProduct.price}
                       onChange={(e) => setNewProduct({...newProduct, price: e.target.value})}
                       placeholder="49.99" 
-                      className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-3 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all" 
+                      className="w-full bg-slate-50 border border-slate-100 rounded-md py-2 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all" 
                     />
                   </div>
                   <div>
@@ -224,7 +224,7 @@ const AdminDashboard: React.FC = () => {
                       value={newProduct.originalPrice}
                       onChange={(e) => setNewProduct({...newProduct, originalPrice: e.target.value})}
                       placeholder="Optional" 
-                      className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-3 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all" 
+                      className="w-full bg-slate-50 border border-slate-100 rounded-md py-2 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all" 
                     />
                   </div>
                   <div className="col-span-2">
@@ -232,7 +232,7 @@ const AdminDashboard: React.FC = () => {
                     <select 
                       value={newProduct.category}
                       onChange={(e) => setNewProduct({...newProduct, category: e.target.value})}
-                      className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-3 px-4 text-sm font-black uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all"
+                      className="w-full bg-slate-50 border border-slate-100 rounded-md py-2 px-4 text-sm font-black uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all"
                     >
                       {['Streetwear', 'Occasion', 'Shoes', 'Jewelry', 'Dresses', 'Accessories', 'Bags', 'Outerwear'].map(cat => (
                         <option key={cat} value={cat}>{cat}</option>
@@ -248,7 +248,7 @@ const AdminDashboard: React.FC = () => {
                         value={newProduct.image}
                         onChange={(e) => setNewProduct({...newProduct, image: e.target.value})}
                         placeholder="https://images.unsplash.com/..." 
-                        className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-3 pl-12 pr-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all" 
+                        className="w-full bg-slate-50 border border-slate-100 rounded-md   py-2 pl-12 pr-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all" 
                       />
                     </div>
                   </div>
@@ -258,7 +258,7 @@ const AdminDashboard: React.FC = () => {
                       required rows={3}
                       value={newProduct.description}
                       onChange={(e) => setNewProduct({...newProduct, description: e.target.value})}
-                      className="w-full bg-slate-50 border border-slate-100 rounded-2xl py-3 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all" 
+                      className="w-full bg-slate-50 border border-slate-100 rounded-md py-2 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-200 transition-all" 
                     />
                   </div>
                   <div className="col-span-2 flex items-center px-1">
@@ -276,7 +276,7 @@ const AdminDashboard: React.FC = () => {
                 <div className="pt-6">
                   <button 
                     type="submit"
-                    className="w-full bg-violet-600 text-white py-5 rounded-2xl font-black text-sm hover:bg-violet-700 transition-all shadow-xl shadow-violet-100 flex items-center justify-center uppercase tracking-widest"
+                    className="w-full bg-violet-600 text-white py-2 rounded-md font-black text-sm hover:bg-violet-700 transition-all shadow-xl shadow-violet-100 flex items-center justify-center uppercase tracking-widest"
                   >
                     Create Material Entry
                   </button>

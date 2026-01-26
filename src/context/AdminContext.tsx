@@ -14,7 +14,7 @@ export const AdminProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const login = (email: string, pass: string) => {
     // Mock credentials
-    if (email === 'admin@lumina.com' && pass === 'admin123') {
+    if (email === 'admin@violet.com' && pass === '0000') {
       setIsAdmin(true);
       return true;
     }

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight,  TrendingUp,  Clock } from 'lucide-react';
+import { ArrowRight, Zap, TrendingUp, Sparkles, Clock, Crown, Laptop, Gift } from 'lucide-react';
 import { useProducts } from '../context/ProductContext';
 import ProductCard from '../components/ProductCard';
 
@@ -9,7 +9,14 @@ import hero1 from '/image/Hero/hero1.jpg';
 import hero2 from '/image/Hero/hero2.jpg';
 import hero3 from '/image/Hero/hero3.png';
 
- 
+const categories = [
+  { name: 'Dresses', icon: <Sparkles size={24} />, color: 'bg-pink-100 text-pink-600' },
+  { name: 'Deals', icon: <Zap size={24} />, color: 'bg-amber-100 text-amber-600' },
+  { name: 'Shoes', icon: <TrendingUp size={24} />, color: 'bg-violet-100 text-violet-600' },
+  { name: 'Tops', icon: <Crown size={24} />, color: 'bg-blue-100 text-blue-600' },
+  { name: 'Electronics', icon: <Laptop size={24} />, color: 'bg-slate-100 text-slate-600' },
+  { name: 'Gifts', icon: <Gift size={24} />, color: 'bg-red-100 text-red-600' },
+];
 
 const Home: React.FC = () => {
   const { products } = useProducts();
@@ -47,7 +54,18 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      
+      {/* Categories */}
+      <section className="max-w-7xl mx-auto px-4 mb-20 overflow-x-auto no-scrollbar animate-in fade-in slide-in-from-left-4 duration-700 delay-200">
+        <div className="flex justify-between items-center gap-8 min-w-[700px] lg:min-w-0">
+          {categories.map((cat, idx) => (
+            <div key={idx} className="flex flex-col items-center group cursor-pointer">
+              <div className={`${cat.color} w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center mb-3 shadow-md group-hover:-translate-y-2 group-hover:scale-110 transition-all`}>
+               </div>
+              <span className="text-[11px] font-black uppercase tracking-wider text-slate-700 group-hover:text-violet-600 transition-colors">{cat.name}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Flash Deals */}
       <section className="bg-violet-50 py-20 mb-20 relative overflow-hidden">
