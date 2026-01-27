@@ -24,7 +24,7 @@ const Home: React.FC = () => {
   const forYou = products.slice(0, 8);
 
   return (
-    <div className="pt-24 lg:pt-32 pb-20 overflow-hidden">
+    <div className="pt-32 pb-20 overflow-hidden">
       {/* Hero Section */}
        <section className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-4 mb-16 h-auto lg:h-[250px] animate-in fade-in slide-in-from-top-4 duration-700">
          <div className="lg:col-span-8 relative group rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-violet-200 h-[250px] lg:h-full">

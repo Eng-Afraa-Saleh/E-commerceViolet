@@ -114,14 +114,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
         <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 border border-slate-50 flex h-48 sm:h-64 animate-in fade-in slide-in-from-bottom-4">
           {/* Image Section */}
           <div
-            className="relative w-40 sm:w-64 flex-shrink-0 p-4 bg-slate-50 overflow-hidden cursor-pointer"
+            className="relative w-30 sm:w-64 flex-shrink-0 md:p-4 bg-slate-50 overflow-hidden cursor-pointer"
             onClick={toggleModal}
           >
             <div className="block h-full overflow-hidden rounded-xl relative group/img">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-violet-900/10 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
                 <Maximize2 className="text-white drop-shadow-lg" size={32} />
@@ -139,8 +139,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
             <div>
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <p className="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-black mb-1 transform group-hover:translate-x-1 transition-transform">{product.category}</p>
-                  <h3 className="text-lg font-black text-slate-900 group-hover:text-violet-600 transition-colors">
+                  <p className="text-[8px] text-slate-400 uppercase tracking-[0.2em] font-black mb-1 transform group-hover:translate-x-1 transition-transform">{product.category}</p>
+                  <h3 className="text-[10px] md:text-lg text-wrap font-black text-slate-900 group-hover:text-violet-600 transition-colors">
                     <Link to={`/product/${product.id}`}>{product.name}</Link>
                   </h3>
                 </div>
@@ -170,16 +170,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, layout = 'grid' }) =
 
             <div className="flex justify-between items-end">
               <div className="flex items-baseline space-x-2">
-                <span className="text-2xl font-black text-slate-900">${product.price.toFixed(2)}</span>
+                <span className="text-[12px] md:text-2xl font-black text-slate-900">${product.price.toFixed(2)}</span>
                 {product.originalPrice && (
-                  <span className="text-sm text-slate-400 line-through">${product.originalPrice.toFixed(2)}</span>
+                  <span className="text-[10px] text-slate-400 line-through">${product.originalPrice.toFixed(2)}</span>
                 )}
               </div>
               <button
                 onClick={handleAddToCart}
-                className="bg-violet-600 text-white px-6 py-3 rounded-full font-black text-xs hover:bg-violet-700 hover:scale-105 active:scale-95 transition-all flex items-center shadow-lg shadow-violet-100"
+                className="bg-violet-600 text-white px-1 md:px-6 py-1 md:py-3 rounded-full font-black text-xs hover:bg-violet-700 hover:scale-105 active:scale-95 transition-all flex items-center  shadow-lg shadow-violet-100"
               >
-                <ShoppingBag size={16} className="mr-2" /> Add
+                <ShoppingBag size={16} /> 
               </button>
             </div>
           </div>
