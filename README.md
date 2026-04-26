@@ -5,7 +5,8 @@
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
- 
+> **[🚀 View Live Demo](https://eng-afraa-saleh.github.io/E-commerceViolet/)**
+
 ## 💡 Overview
 
 [cite_start]A robust, fully responsive e-commerce front-end application built with modern web technologies[cite: 62]. Designed with a focus on clean code architecture, predictable state management, and a professional, minimalist user interface. The platform offers a seamless shopping experience from product discovery to checkout, complemented by a secure administrative dashboard.
